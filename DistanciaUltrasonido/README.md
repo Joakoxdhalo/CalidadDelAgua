@@ -3,5 +3,5 @@
 
 Tenemos el siguiente Enlace para el mismo caso para FPGA
 
-![https://github.com/Fabeltranm/FPGA-Game-D1/tree/master/HW/RTL/08ULTRASONIDO/Version_01]
+  https://github.com/Fabeltranm/FPGA-Game-D1/tree/master/HW/RTL/08ULTRASONIDO/Version_01
 

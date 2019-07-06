@@ -1,0 +1,2 @@
+El módulo WiFi, puede transmitir datos a una página web con mínimo un delay de 2 segundos, desde la IDE hasta Adafruit.
+Quizás se deba en parte a la velocidad de la red en mi casa, (Joaquín).

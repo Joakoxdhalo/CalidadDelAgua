@@ -43,8 +43,8 @@ wlan.active(True)
 connected = wlan.isconnected()
 #wlan.connect('HUAWEIP20', 'c44173a456c3')
 #wlan.connect('Camu', 'intern3t')
-#wlan.connect('ADEJANDO', 'kiriku22')
-wlan.connect('Dantiteis', 'Standar.1406')
+wlan.connect('ADEJANDO', 'kiriku22')
+#wlan.connect('Dantiteis', 'Standar.1406')
 while not connected:
     print('connecting wifi')
     connected = wlan.isconnected()
@@ -53,7 +53,16 @@ while not connected:
 settime()
 
 client = MQTTClient(CONFIG['client_id'], CONFIG['broker'])
-client.connect()
+connected = False
+while not connected:
+    try:
+        client.connect()
+        connected = True
+    except:
+        time.sleep(1)
+        print("Failed connecting to {}".format(CONFIG['broker']))
+        continue
+
 print("Connected to {}".format(CONFIG['broker']))
 
 #ts = time.time()

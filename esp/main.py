@@ -23,13 +23,13 @@ while True:
 
     ds.convert_temp() #temperature
     temperature_level = ds.read_temp(roms[0])
-
+    """
     S1.value(0)
     S2.value(0)
     S3.value(0)
     ph_value = (1023-sensor.read())/73.07
     time.sleep(1)
-
+    """
     S1.value(1)
     S2.value(0)
     S3.value(0)
@@ -49,7 +49,7 @@ while True:
     width = time.ticks_diff(time.ticks_us(), start)
     level_value2 = width/59
 
-    payload = {
+    """payload = {
         'measure_id': event_uuid,
         'device_id': point[3],
         'description': point[2],
@@ -69,6 +69,30 @@ while True:
             {
                 'name': 'ph',
                 'value': ph_value
+            },
+            {
+                'name': 'level_2',
+                'value': level_value2
+            }
+        ]
+    }"""
+
+    payload = {
+        'measure_id': event_uuid,
+        'device_id': point[3],
+        'description': point[2],
+        'lat': point[0],
+        'lng': point[1],
+        'event_timestamp': '{}-{}-{} {}:{}:{}'.format(timestamp[0], timestamp[1], timestamp[2], timestamp[3], timestamp[4], timestamp[5]),
+        'metrics': [
+            {
+                'name': 'temperature',
+                'value': temperature_level
+            },
+
+            {
+                'name': 'level',
+                'value': level_value
             },
             {
                 'name': 'level_2',

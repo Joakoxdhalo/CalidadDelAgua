@@ -1,4 +1,5 @@
 import machine
+import time
 import onewire, ds18x20
 
 temperature_pin = machine.Pin(2)
@@ -17,7 +18,8 @@ Echo = machine.Pin(12, machine.Pin.IN)
 while True:
     print("Creating new data point...")
     #timestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-    timestamp = randomDate((2019, 05, 30, 0, 0, 0, 0, 0), (2019, 05, 31, 12, 0, 0, 0, 0), random.getrandbits(32)/2**32)
+    #timestamp = randomDate((2019, 05, 30, 0, 0, 0, 0, 0), (2019, 05, 31, 12, 0, 0, 0, 0), random.getrandbits(32)/2**32)
+    timestamp = time.localtime(time.time())
     event_uuid = uuid4()
     point = points[random.getrandbits(2)]
 
@@ -108,4 +110,5 @@ while True:
     except:
         print('Could not publish measure')
     time.sleep(1)
+
 

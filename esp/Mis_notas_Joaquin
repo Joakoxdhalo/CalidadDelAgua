@@ -1,0 +1,81 @@
+Para flashear la ESP desde cero:
+
+esptool.py --port /dev/ttyUSB0 --baud 115200 write_flash --flash_size=detect 0 
+
+
+Si hago:
+
+pip install XXXX
+
+OJO: Sin el sudo, los paquetes de pip no se instalan en las Environment variables.
+
+Para salir de picocom ctrl+a luego ctrl +q
+
+Instalé esptool
+pip install esptool
+
+Instalé ampy con:
+pip3 install --user adafruit-ampy
+
+Hay que dar permisos al puerto USB mediante:
+sudo chmod 777 /dev/ttyUSB0 
+
+Para ubicar python dentro de mi programa:
+whereis python
+
+Cuando hay un problema de hardware python no dice nada... Cuando estaba en la parte del código del sensor de nivel y como no había sensor habían problemas y python no dijo nada.
+
+Los comandos para correr en la ESP son:
+
+Para abrir comunicación con la ESP:
+sudo picocom /dev/ttyUSB0 -b115200
+
+Para poner un archivo en la ESP:
+sudo ampy -p /dev/ttyUSB0 put main.py
+
+Para borrar un archivo en la ESP:
+sudo ampy -p /dev/ttyUSB0 rm boot.py
+
+Para mirar los archivos que tiene la ESP por dentro:
+sudo ampy -p /dev/ttyUSB0 ls
+
+Para obtener un archivo de la ESP:
+sudo ampy -p /dev/ttyUSB0 get main.py
+
+Para mover un archivo hacia una carpeta con protección de escritura:
+1. Nos paramos en la ruta del archivo a mover
+2. Hacemos:
+
+sudo mv archivo /path/a/donde/lo/quiero/mandar
+
+Para eliminar un archivo en una carpeta con protección de escritura, (write-pretected), me paro dentro de la ruta del archivo y hago:
+sudo rm archivo
+
+Para añadir un archivo cambiado a stage:
+git add archivo     ó
+git add --all
+
+Para hacer un commit con mensaje:
+sudo git commit -m "Este es el commit de Joaco"
+
+Para hacer un push:
+sudo git push
+
+E ingreso mis credenciales git
+
+La primera vez que lo hago me piden credenciales, entonces tengo que ingresar mi usuario y contraseña de la siguiente manera:
+
+git config --global user.name "Joakoxdhalo"
+git config --global user.email "joacojimeca@gmail.com"
+
+Al momento de hacer push, me piden la clave, y listo.
+
+
+Para saber el estado de mi repositorio:
+git status
+
+Para devolver los cambios de mi repositorio local a un commit anterior dentro de mi branch actual:
+
+sudo git reset --hard HEAD^
+
+

@@ -41,10 +41,16 @@ def uuid4():
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 connected = wlan.isconnected()
-#wlan.connect('HUAWEIP20', 'c44173a456c3')
-#wlan.connect('Camu', 'intern3t')
-wlan.connect('ADEJANDO', 'kiriku22')
-#wlan.connect('Dantiteis', 'Standar.1406')
+# wlan.connect('Camu', 'intern3t')
+# wlan.connect('ADEJANDO', 'kiriku22')
+# wlan.connect('Dantiteis', 'Standar.1406')
+# wlan.connect('UNAL')
+# wlan.connect('Crackio', 'a135e2074be8')
+# wlan.connect('Wi-Fi Jonatan', '12345678')
+# wlan.connect('HUAWEIP20', 'c44173a456c3')
+wlan.connect('Hernandez', '52291849')
+
+
 while not connected:
     print('connecting wifi')
     connected = wlan.isconnected()
@@ -74,4 +80,5 @@ points = [
 	(-1.418765, -70.587582, "Rio Caqueta Zona Media", "4")
 ]
 """
-points = [(4.6355555555556, -74.082777777778, "Punto de Prueba", "5")]
+
+

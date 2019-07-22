@@ -78,4 +78,10 @@ Para devolver los cambios de mi repositorio local a un commit anterior dentro de
 
 sudo git reset --hard HEAD^
 
+Ojo que tengo problemas de permiso remoto cuando clono repositorio con:
 
+git@github.com:Joakoxdhalo/CalidadDelAgua.git
+
+Pero no me pasa lo mismo con:
+
+https://github.com/Joakoxdhalo/CalidadDelAgua.git
